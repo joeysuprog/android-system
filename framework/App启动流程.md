@@ -219,7 +219,7 @@ Zygote 端: ZygoteConnection.processCommand()
 | **一致性** | 所有 App 进程的初始状态相同，减少兼容性问题                   |
 
 
-> 详细的 Zygote fork 机制参见 [01-1-Android系统启动流程.md](./01-1-Android系统启动流程.md) 第 4、6 章。
+> 详细的 Zygote fork 机制参见 [Android系统启动流程](./Android系统启动流程.md) 第 4、6 章。
 
 ---
 
@@ -398,7 +398,7 @@ ViewRootImpl.performTraversals()
 | SurfaceFlinger | Native         | 图层合成，输出到屏幕              | `frameworks/native/services/surfaceflinger/`                |
 
 
-> 详细的渲染管线参见 [03-View绘制体系.md](./03-View绘制体系.md)、[04-HWUI渲染管线.md](./04-HWUI渲染管线.md)、[07-渲染全链路.md](./07-渲染全链路.md)。
+> 详细的渲染管线参见 [View绘制体系](./View绘制体系.md)、[HWUI渲染管线](./HWUI渲染管线.md)、[渲染全链路](./渲染全链路.md)。
 
 ---
 
@@ -491,7 +491,7 @@ Activity.onResume           █░░░░░░░░░░░░░░░  ~5
   └─ SF 合成                   ██░░░░░░░░░░░░  ~200ms
 ```
 
-> 详细的启动性能分析方法参见 [12-启动与内存分析实战.md](./12-启动与内存分析实战.md)。
+> 详细的启动性能分析方法参见 [启动分析流程](../perfetto/启动分析流程.md)。
 
 ---
 
@@ -529,11 +529,11 @@ Activity.onResume           █░░░░░░░░░░░░░░░  ~5
 
 **相关文档**：
 
-- [01-1-Android系统启动流程](./01-1-Android系统启动流程.md) — 系统启动到 Launcher 显示，本文从 Launcher 点击开始
-- [02-Binder与跨进程通信](./02-Binder与跨进程通信.md) — 启动链路中 Launcher↔ATMS↔App 的 Binder IPC 机制
-- [02-1-AMS与WMS核心服务](./02-1-AMS与WMS核心服务.md) — ATMS/AMS 处理 startActivity 的服务端逻辑
-- [03-View绘制体系](./03-View绘制体系.md) — 首帧 performTraversals 的 measure/layout/draw 详解
-- [04-HWUI渲染管线](./04-HWUI渲染管线.md) — 首帧 draw 后 HWUI 的 DisplayList 录制与 GPU 渲染
-- [07-渲染全链路](./07-渲染全链路.md) — 从触摸到像素上屏的完整渲染路径
-- [12-启动与内存分析实战](./12-启动与内存分析实战.md) — 使用 Perfetto 分析冷启动性能瓶颈
+- [Android系统启动流程](./Android系统启动流程.md) — 系统启动到 Launcher 显示，本文从 Launcher 点击开始
+- [Binder与跨进程通信](./Binder与跨进程通信.md) — 启动链路中 Launcher↔ATMS↔App 的 Binder IPC 机制
+- [AMS与WMS核心服务](./AMS与WMS核心服务.md) — ATMS/AMS 处理 startActivity 的服务端逻辑
+- [View绘制体系](./View绘制体系.md) — 首帧 performTraversals 的 measure/layout/draw 详解
+- [HWUI渲染管线](./HWUI渲染管线.md) — 首帧 draw 后 HWUI 的 DisplayList 录制与 GPU 渲染
+- [渲染全链路](./渲染全链路.md) — 从触摸到像素上屏的完整渲染路径
+- [启动分析流程](../perfetto/启动分析流程.md) — 使用 Perfetto 分析冷启动性能瓶颈
 

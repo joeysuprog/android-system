@@ -349,7 +349,7 @@ Android Studio（Hedgehog+）支持 Compose 专属功能：
 
 ### 7.2 四大场景联合分析
 
-**场景 1：列表滑动掉帧**（对应 [11-掉帧分析实战](./11-掉帧分析实战.md)）
+**场景 1：列表滑动掉帧**（对应 [掉帧分析方法](./掉帧分析方法.md)）
 
 
 | 步骤  | 工具               | 操作                                        |
@@ -361,7 +361,7 @@ Android Studio（Hedgehog+）支持 Compose 专属功能：
 | 5   | Layout Inspector | 检查 View 层级深度 / Compose 重组次数               |
 
 
-**场景 2：冷启动慢**（对应 [12-启动与内存分析实战](./12-启动与内存分析实战.md)）
+**场景 2：冷启动慢**（对应 [启动分析流程](./启动分析流程.md)）
 
 
 | 步骤  | 工具               | 操作                                               |
@@ -385,7 +385,7 @@ Android Studio（Hedgehog+）支持 Compose 专属功能：
 | 5   | Perfetto        | 检查是否触发了 LMK（低内存杀进程）         |
 
 
-**场景 4：后台 ANR**（对应 [13-复杂场景综合实战](./13-复杂场景综合实战.md)）
+**场景 4：后台 ANR**（对应 [ANR分析实战](../practice/ANR分析实战.md)）
 
 
 | 步骤  | 工具              | 操作                     |
@@ -456,10 +456,11 @@ Android Studio（Hedgehog+）支持 Compose 专属功能：
 
 **相关文档**：
 
-- [10-Perfetto 使用指南](./10-Perfetto使用指南.md) — 系统级追踪工具
-- [11-掉帧分析实战](./11-掉帧分析实战.md) — 列表滑动掉帧排查
-- [12-启动与内存分析实战](./12-启动与内存分析实战.md) — 冷启动优化
-- [13-复杂场景综合实战](./13-复杂场景综合实战.md) — ANR/低内存等综合场景
-- [cheatsheet-adb](./cheatsheet-adb.md) — ADB 常用命令速查
-- [cheatsheet-perfetto-sql](./cheatsheet-perfetto-sql.md) — Perfetto SQL 速查
+- [Perfetto使用指南](./Perfetto使用指南.md) — 系统级追踪工具
+- [掉帧分析方法](./掉帧分析方法.md) — 列表滑动掉帧排查
+- [启动分析流程](./启动分析流程.md) — 冷启动优化
+- [转场动画卡顿实战](../practice/转场动画卡顿实战.md) — 转场动画卡顿排查
+- [ANR分析实战](../practice/ANR分析实战.md) — Binder 阻塞导致的 ANR
+- [低内存频繁杀后台实战](../practice/低内存频繁杀后台实战.md) — LMK 机制与内存排查
+- [刷新率切换动画异常实战](../practice/刷新率切换动画异常实战.md) — 刷新率切换导致动画异常排查
 

@@ -1007,10 +1007,10 @@ adb shell ls /sdcard/DCIM/Camera/
 ## 下一步学习建议
 
 - 阅读 `ContentProviderHelper.getContentProviderImpl()` 的完整实现，理解 Provider 获取/等待/超时机制
-- 结合 [02-1-AMS与WMS核心服务.md](./02-1-AMS与WMS核心服务.md) 理解 AMS 如何统一管理四大组件
-- 结合 [02-Binder与跨进程通信.md](./02-Binder与跨进程通信.md) 理解 ContentProvider 底层的 Binder IPC 细节
-- 结合 [02-3-Service组件.md](./02-3-Service组件.md) 对比 Service 和 ContentProvider 的跨进程通信差异
-- 结合 [02-4-BroadcastReceiver.md](./02-4-BroadcastReceiver.md) 完成四大组件的全景认知
+- 结合 [AMS与WMS核心服务](../framework/AMS与WMS核心服务.md) 理解 AMS 如何统一管理四大组件
+- 结合 [Binder与跨进程通信](../framework/Binder与跨进程通信.md) 理解 ContentProvider 底层的 Binder IPC 细节
+- 结合 [Service组件](./Service组件.md) 对比 Service 和 ContentProvider 的跨进程通信差异
+- 结合 [BroadcastReceiver](./BroadcastReceiver.md) 完成四大组件的全景认知
 - 阅读 `ContentService.java` 源码，理解 ContentObserver 的 ObserverNode 树实现
 - 阅读 `MediaProvider` 源码（`packages/providers/MediaProvider`），理解 Scoped Storage 的实际实现
 - 阅读 `App Startup`（`androidx.startup`）库源码，理解如何优化 ContentProvider 初始化对冷启动的影响

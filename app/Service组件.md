@@ -100,7 +100,7 @@ AMS（系统服务之一）
 
 **一句话总结**：应用 Service 是"被 AMS 管的打工人"，AMS/WMS 是"管别人的系统基础设施"。前者的 `Service` 继承自 `android.app.Service`、跑在 App 进程、有生命周期、可被杀死；后者是 system_server 里的常驻 Binder 对象，不受四大组件生命周期约束。
 
-> 更多系统服务细节参见 [02-1-AMS与WMS核心服务.md](./02-1-AMS与WMS核心服务.md)
+> 更多系统服务细节参见 [AMS与WMS核心服务](../framework/AMS与WMS核心服务.md)
 
 ---
 
@@ -649,7 +649,7 @@ IMyService.Stub.asInterface()
 | 性能 | 适合低频调用 | 适合高频/高并发调用 |
 | 系统服务使用 | 极少 | 所有系统服务均使用 AIDL |
 
-> 更多 Binder 机制细节参见 [02-Binder与跨进程通信.md](./02-Binder与跨进程通信.md)
+> 更多 Binder 机制细节参见 [Binder与跨进程通信](../framework/Binder与跨进程通信.md)
 
 ---
 
@@ -888,7 +888,7 @@ adb pull /data/anr/traces.txt
 ## 下一步学习建议
 
 - 阅读 `ActiveServices.java` 的 `startServiceLocked()` 和 `bindServiceLocked()` 完整实现
-- 结合 [02-1-AMS与WMS核心服务.md](./02-1-AMS与WMS核心服务.md) 理解 AMS 进程管理与 Service 的关系
-- 结合 [02-Binder与跨进程通信.md](./02-Binder与跨进程通信.md) 理解 Service 跨进程通信的底层机制
-- 结合 [02-2-Activity与Fragment.md](./02-2-Activity与Fragment.md) 对比 Activity 与 Service 的生命周期差异
+- 结合 [AMS与WMS核心服务](../framework/AMS与WMS核心服务.md) 理解 AMS 进程管理与 Service 的关系
+- 结合 [Binder与跨进程通信](../framework/Binder与跨进程通信.md) 理解 Service 跨进程通信的底层机制
+- 结合 [Activity与Fragment](./Activity与Fragment.md) 对比 Activity 与 Service 的生命周期差异
 - 阅读 `OomAdjuster.java` 了解 Service 对进程优先级的影响细节

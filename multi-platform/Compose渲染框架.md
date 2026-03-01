@@ -145,7 +145,7 @@ Gap Buffer 最早常用于文本编辑器的底层实现（像你在打字时，
 ### 3.2 Composer — 组合执行器与"省去第三棵树"的魔法
 
 Composer 是驱动 `@Composable` 函数执行的引擎。
-在 [03-2-Flutter渲染框架](./03-2-Flutter渲染框架.md) 中我们知道，Flutter 使用了经典的三棵树：`Widget`（配置树）、`Element`（状态树）、`RenderObject`（渲染树）。而 Compose 只有两棵树：`SlotTable`（状态记忆）和 `LayoutNode`（渲染布局）。
+在 [Flutter渲染框架](./Flutter渲染框架.md) 中我们知道，Flutter 使用了经典的三棵树：`Widget`（配置树）、`Element`（状态树）、`RenderObject`（渲染树）。而 Compose 只有两棵树：`SlotTable`（状态记忆）和 `LayoutNode`（渲染布局）。
 
 **Compose 到底用了什么黑魔法，把描述 UI 结构的 `Widget 树` 给凭空变没了？**
 答案就在于 **Kotlin 编译器插件（Compiler Plugin）的魔法 + Composer 的位置记忆（Positional Memoization）**。
@@ -616,11 +616,11 @@ sequenceDiagram
 
 | Compose 侧                               | AOSP 桥接点                                                | 源码位置                  | 已学文档                                            |
 | --------------------------------------- | ------------------------------------------------------- | --------------------- | ----------------------------------------------- |
-| `MonotonicFrameClock`                   | `Choreographer.postFrameCallback()`                     | `Choreographer.java`  | [06-VSync与帧调度](./06-VSync与帧调度.md)               |
-| `AndroidComposeView.onMeasure/onLayout` | `ViewRootImpl.performTraversals()`                      | `ViewRootImpl.java`   | [03-View绘制体系](./03-View绘制体系.md)                 |
-| `DrawScope` → `Canvas`                  | HWUI `RecordingCanvas` → DisplayList                    | `libs/hwui/`          | [04-HWUI渲染管线](./04-HWUI渲染管线.md)                 |
-| Buffer 提交                               | `Surface` → `BufferQueue` → SurfaceFlinger              | `SurfaceFlinger.cpp`  | [05-SurfaceFlinger合成](./05-SurfaceFlinger合成.md) |
-| 触摸事件                                    | `InputDispatcher` → `ViewRootImpl.dispatchTouchEvent()` | `InputDispatcher.cpp` | [07-渲染全链路](./07-渲染全链路.md)                       |
+| `MonotonicFrameClock`                   | `Choreographer.postFrameCallback()`                     | `Choreographer.java`  | [VSync与帧调度](../framework/VSync与帧调度.md)               |
+| `AndroidComposeView.onMeasure/onLayout` | `ViewRootImpl.performTraversals()`                      | `ViewRootImpl.java`   | [View绘制体系](../framework/View绘制体系.md)                 |
+| `DrawScope` → `Canvas`                  | HWUI `RecordingCanvas` → DisplayList                    | `libs/hwui/`          | [HWUI渲染管线](../framework/HWUI渲染管线.md)                 |
+| Buffer 提交                               | `Surface` → `BufferQueue` → SurfaceFlinger              | `SurfaceFlinger.cpp`  | [SurfaceFlinger合成](../framework/SurfaceFlinger合成.md) |
+| 触摸事件                                    | `InputDispatcher` → `ViewRootImpl.dispatchTouchEvent()` | `InputDispatcher.cpp` | [渲染全链路](../framework/渲染全链路.md)                       |
 
 
 **核心结论**：Compose 并没有绕过 AOSP 的渲染管线，而是通过 `AndroidComposeView` 这个 `ViewGroup` 接入到了完全相同的 `ViewRootImpl → Choreographer → HWUI → SurfaceFlinger` 链路中。Compose 的创新在 ViewGroup 之上（声明式 + SlotTable + Snapshot），之下仍然走的是传统渲染通道。
@@ -905,7 +905,7 @@ LIMIT 20;
 5. 优化：缓存 / 下推 State 读取 / graphicsLayer / LazyColumn
 ```
 
-> 更多 Perfetto 操作参见 [10-Perfetto使用指南](./10-Perfetto使用指南.md)，Layout Inspector 详见 [10-1-AndroidStudioProfiler性能优化](./10-1-AndroidStudioProfiler性能优化.md)
+> 更多 Perfetto 操作参见 [Perfetto使用指南](../perfetto/Perfetto使用指南.md)，Layout Inspector 详见 [AndroidStudioProfiler性能优化](../perfetto/AndroidStudioProfiler性能优化.md)
 
 ---
 
@@ -1017,9 +1017,9 @@ adb shell setprop debug.hwui.profile.maxframes 128
 
 ## 下一步学习建议
 
-- 阅读 [03-View绘制体系](./03-View绘制体系.md) 对照 Compose 的测量/布局/绘制差异
-- 阅读 [04-HWUI渲染管线](./04-HWUI渲染管线.md) 理解 Compose Canvas 绘制的底层
-- 阅读 [06-VSync与帧调度](./06-VSync与帧调度.md) 理解 Compose 动画帧驱动
-- 阅读 [07-渲染全链路](./07-渲染全链路.md) 将 Compose 帧放入完整的渲染链路中理解
+- 阅读 [View绘制体系](../framework/View绘制体系.md) 对照 Compose 的测量/布局/绘制差异
+- 阅读 [HWUI渲染管线](../framework/HWUI渲染管线.md) 理解 Compose Canvas 绘制的底层
+- 阅读 [VSync与帧调度](../framework/VSync与帧调度.md) 理解 Compose 动画帧驱动
+- 阅读 [渲染全链路](../framework/渲染全链路.md) 将 Compose 帧放入完整的渲染链路中理解
 - 浏览 `frameworks/base/packages/SystemUI/compose/` 了解 Google 如何在系统 UI 中实践 Compose
 

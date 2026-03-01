@@ -4,10 +4,10 @@
 >
 > 💡 **学习导读**：本文在叙述 Flutter 设计时，会全程对标 Android 原生渲染框架的四大核心模块：
 >
-> 1. [《03-View绘制体系》](./03-View绘制体系.md)
-> 2. [《04-HWUI渲染管线》](./04-HWUI渲染管线.md)
-> 3. [《06-VSync与帧调度》](./06-VSync与帧调度.md)
-> 4. [《05-SurfaceFlinger合成》](./05-SurfaceFlinger合成.md)
+> 1. [《View绘制体系》](../framework/View绘制体系.md)
+> 2. [《HWUI渲染管线》](../framework/HWUI渲染管线.md)
+> 3. [《VSync与帧调度》](../framework/VSync与帧调度.md)
+> 4. [《SurfaceFlinger合成》](../framework/SurfaceFlinger合成.md)
 
 ---
 
@@ -65,7 +65,7 @@ flowchart LR
 
 ## 2. Widget / Element / RenderObject 三棵树
 
-> 💡 **【对标原生】**：本节内容对应 Android 的 **[《03-View绘制体系》](./03-View绘制体系.md)**。在原生中，UI 的描述、管理、布局、绘制都由 `View` 承担（过于沉重）；而 Flutter 将其拆分为轻量的 `Widget`、负责状态和生命周期的 `Element`，以及专门负责布局绘制的 `RenderObject`。
+> 💡 **【对标原生】**：本节内容对应 Android 的 **[《View绘制体系》](../framework/View绘制体系.md)**。在原生中，UI 的描述、管理、布局、绘制都由 `View` 承担（过于沉重）；而 Flutter 将其拆分为轻量的 `Widget`、负责状态和生命周期的 `Element`，以及专门负责布局绘制的 `RenderObject`。
 
 ### 2.1 三棵树的职责拆分
 
@@ -103,7 +103,7 @@ flowchart LR
 ### 2.2 详解三棵树
 
 
-| 树                | 节点基类           | 职责                                          | 💡 对应 [《03-View绘制体系》](./03-View绘制体系.md)          |
+| 树                | 节点基类           | 职责                                          | 💡 对应 [《View绘制体系》](../framework/View绘制体系.md)          |
 | ---------------- | -------------- | ------------------------------------------- | ------------------------------------------------ |
 | **Widget**       | `Widget`       | 声明式配置描述（轻量、不可变、频繁重建）                        | 类似写在 XML 中的标签配置，只是它是代码形式                         |
 | **Element**      | `Element`      | 管理 Widget → RenderObject 的映射，跨帧复用，做 diff 判断 | `View` 中负责保存状态（状态机）、生命周期管理的部分                    |
@@ -141,7 +141,7 @@ flowchart LR
 
 ## 3. 布局系统 — Constraints 向下，Size 向上
 
-> 💡 **【对标原生】**：本节内容对应 **[《03-View绘制体系》](./03-View绘制体系.md)** 中的 `MeasureSpec` 和测量布局流程。
+> 💡 **【对标原生】**：本节内容对应 **[《View绘制体系》](../framework/View绘制体系.md)** 中的 `MeasureSpec` 和测量布局流程。
 
 ### 3.1 单遍布局协议
 
@@ -170,7 +170,7 @@ Flutter 遵循严格的单遍布局（Single-pass Layout），通过 `BoxConstra
 ### 3.2 布局约束与边界优化对比
 
 
-| 维度     | Android MeasureSpec ([《03-View绘制体系》](./03-View绘制体系.md)) | Flutter BoxConstraints                   |
+| 维度     | Android MeasureSpec ([《View绘制体系》](../framework/View绘制体系.md)) | Flutter BoxConstraints                   |
 | ------ | ------------------------------------------------------- | ---------------------------------------- |
 | 数据结构   | 32 位 int（高 2 位 mode + 低 30 位 size）                      | 4 个 double (min/maxWidth, min/maxHeight) |
 | 模式     | EXACTLY / AT_MOST / UNSPECIFIED                         | 紧约束 (min==max) / 松约束 (min=0) / 无约束       |
@@ -182,14 +182,14 @@ Flutter 遵循严格的单遍布局（Single-pass Layout），通过 `BoxConstra
 
 ## 4. 绘制系统与 Layer 树
 
-> 💡 **【对标原生】**：本节内容对应 Android 的 **[《04-HWUI渲染管线》](./04-HWUI渲染管线.md)**。Flutter 在 Dart 层构建的 Layer 树和 Scene，在设计理念上与 HWUI 的 RenderNode 树和 DisplayList 如出一辙。
+> 💡 **【对标原生】**：本节内容对应 Android 的 **[《HWUI渲染管线》](../framework/HWUI渲染管线.md)**。Flutter 在 Dart 层构建的 Layer 树和 Scene，在设计理念上与 HWUI 的 RenderNode 树和 DisplayList 如出一辙。
 
 ### 4.1 Layer 树与 HWUI 概念映射
 
 Flutter 渲染的产物是 Layer 树，而不是直接画在像素上：
 
 
-| Flutter 绘制概念            | 💡 对应 [《04-HWUI渲染管线》](./04-HWUI渲染管线.md) 概念       | 说明                                                                                                                                    |
+| Flutter 绘制概念            | 💡 对应 [《HWUI渲染管线》](../framework/HWUI渲染管线.md) 概念       | 说明                                                                                                                                    |
 | ----------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `PictureLayer`          | `DisplayList`                                    | 记录 2D 绘制命令（如 `drawRect`, `drawText`）的列表，而非位图。                                                                                         |
 | `OffsetLayer` 等其他 Layer | `RenderNode` 的属性（如 `setTranslation`, `setAlpha`） | 用于在 GPU 回放时做矩阵变换，无需重绘底层 `PictureLayer`。                                                                                               |
@@ -218,7 +218,7 @@ void compositeFrame() {
 
 ## 5. Flutter Engine — Skia、Impeller 与线程模型
 
-> 💡 **【对标原生】**：本节对应 **[《04-HWUI渲染管线》](./04-HWUI渲染管线.md)** 中的 HWUI 架构和线程模型。Flutter Engine 扮演的就是 HWUI 的角色，只是它没有内置在 Android 框架中。
+> 💡 **【对标原生】**：本节对应 **[《HWUI渲染管线》](../framework/HWUI渲染管线.md)** 中的 HWUI 架构和线程模型。Flutter Engine 扮演的就是 HWUI 的角色，只是它没有内置在 Android 框架中。
 
 ### 5.1 Skia 与 Impeller
 
@@ -246,7 +246,7 @@ flowchart LR
 
 
 
-| Flutter 线程          | 职责                                                      | 💡 对应 [《04-HWUI渲染管线》](./04-HWUI渲染管线.md) 及原生组件                            |
+| Flutter 线程          | 职责                                                      | 💡 对应 [《HWUI渲染管线》](../framework/HWUI渲染管线.md) 及原生组件                            |
 | ------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
 | **Platform Thread** | 响应平台生命周期、处理 Platform Channel 消息、分发输入事件。                 | `ActivityThread` 主线程。但 Flutter 不在其中进行 UI 测量和绘制，避免了主线程卡顿。                 |
 | **UI Thread**       | 执行 Dart 代码：`build` → `layout` → `paint`，生成 Layer 树。     | **HWUI Main Thread**（UI 线程中负责执行 measure/layout/draw 录制 DisplayList 的阶段）。 |
@@ -258,7 +258,7 @@ flowchart LR
 
 ## 6. 帧调度机制 — 接入 Choreographer
 
-> 💡 **【对标原生】**：本节深度对标 Android 系统的 **[《06-VSync与帧调度》](./06-VSync与帧调度.md)**。Flutter 虽然自带渲染器，但它必须听从 Android 系统的帧节拍（VSync）。
+> 💡 **【对标原生】**：本节深度对标 Android 系统的 **[《VSync与帧调度》](../framework/VSync与帧调度.md)**。Flutter 虽然自带渲染器，但它必须听从 Android 系统的帧节拍（VSync）。
 
 ### 6.1 获取 VSync 信号
 
@@ -281,7 +281,7 @@ Flutter Embedder (Platform Thread) 收到回调
 Flutter UI Thread 的帧处理由 `SchedulerBinding` 管理，它分为两个核心阶段，这与 `Choreographer` 的内部阶段完美对应：
 
 
-| Flutter `SchedulerBinding` 阶段   | 💡 对应 [《06-VSync与帧调度》](./06-VSync与帧调度.md) `Choreographer` 回调 | 动作内容                                              |
+| Flutter `SchedulerBinding` 阶段   | 💡 对应 [《VSync与帧调度》](../framework/VSync与帧调度.md) `Choreographer` 回调 | 动作内容                                              |
 | ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | `**handleBeginFrame`** (Ticker) | `CALLBACK_ANIMATION`                                         | 执行动画计算，更新 AnimationController 的值。                 |
 | `**handleDrawFrame**`           | `CALLBACK_TRAVERSAL`                                         | 执行 `build()` → `layout()` → `paint()` → 生成 Scene。 |
@@ -292,14 +292,14 @@ Flutter UI Thread 的帧处理由 `SchedulerBinding` 管理，它分为两个核
 
 ## 7. 平台桥接与合成出口 — 接入 SurfaceFlinger
 
-> 💡 **【对标原生】**：本节深度对标 Android 系统的 **[《05-SurfaceFlinger合成》](./05-SurfaceFlinger合成.md)**。这是解答“Flutter 画出来的东西怎么显示到屏幕上”的最终答案。
+> 💡 **【对标原生】**：本节深度对标 Android 系统的 **[《SurfaceFlinger合成》](../framework/SurfaceFlinger合成.md)**。这是解答“Flutter 画出来的东西怎么显示到屏幕上”的最终答案。
 
 ### 7.1 Flutter 获取渲染目标的两种方式
 
 Flutter 不能直接画在屏幕上，它需要一个 Android 提供的载体。
 
 
-| 载体类型                           | 原理                                                                 | 💡 与 [《05-SurfaceFlinger合成》](./05-SurfaceFlinger合成.md) 的关系                                                                                   |
+| 载体类型                           | 原理                                                                 | 💡 与 [《SurfaceFlinger合成》](../framework/SurfaceFlinger合成.md) 的关系                                                                                   |
 | ------------------------------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **FlutterSurfaceView** (默认，推荐) | 底层使用 `SurfaceView`。Flutter Engine 直接拿到该 Surface 的 `ANativeWindow`。 | 拥有完全独立的 BufferQueue。**完全绕过 HWUI**，Flutter 的 Raster Thread 自己作为生产者 dequeueBuffer，画完后 queueBuffer 给 SurfaceFlinger。在 SF 看来，这是一个独立的 Layer。性能最高。 |
 | **FlutterTextureView**         | 底层使用 `TextureView`。产生 `SurfaceTexture`。                            | 相当于将 Flutter 渲染的画面作为一张纹理贴图。需要**经过 HWUI**，由 HWUI 的 RenderThread 进行二次合成后再交给 SF。支持 View 动画和复杂嵌套，但多一次 GPU 拷贝开销。                                  |
@@ -455,8 +455,8 @@ sequenceDiagram
 
 复习以下四篇 Android 原生渲染基础文档，加深对 Flutter 跨界对接原理的理解：
 
-- 🟢 [03-View绘制体系](./03-View绘制体系.md)
-- 🟢 [04-HWUI渲染管线](./04-HWUI渲染管线.md)
-- 🟢 [06-VSync与帧调度](./06-VSync与帧调度.md)
-- 🟢 [05-SurfaceFlinger合成](./05-SurfaceFlinger合成.md)
+- 🟢 [View绘制体系](../framework/View绘制体系.md)
+- 🟢 [HWUI渲染管线](../framework/HWUI渲染管线.md)
+- 🟢 [VSync与帧调度](../framework/VSync与帧调度.md)
+- 🟢 [SurfaceFlinger合成](../framework/SurfaceFlinger合成.md)
 

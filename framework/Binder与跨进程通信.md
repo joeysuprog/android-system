@@ -318,6 +318,6 @@ adb shell ps -T -p $(adb shell pidof system_server)
 
 ## 十三、下一步学习建议
 
-- 结合 [01-Android系统架构全景.md](./01-Android系统架构全景.md) 理解各系统服务如何通过 Binder 对外提供能力
+- 结合 [Android系统架构全景](./Android系统架构全景.md) 理解各系统服务如何通过 Binder 对外提供能力
 - 自行编写一个简单的 AIDL 服务，并用 `service list`、`dumpsys` 观察其注册与调用
 - 学习 Binder 驱动源码，深入理解一次拷贝与 mmap 的实现

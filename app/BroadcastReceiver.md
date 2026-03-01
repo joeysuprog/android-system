@@ -1037,9 +1037,9 @@ adb shell am broadcast -n com.example.app/.MyStaticReceiver
 ## 下一步学习建议
 
 - 阅读 `BroadcastQueue.processNextBroadcastLocked()` 的完整实现，理解并行/串行分发逻辑
-- 结合 [02-1-AMS与WMS核心服务.md](./02-1-AMS与WMS核心服务.md) 理解 AMS 如何统一管理四大组件
-- 结合 [02-Binder与跨进程通信.md](./02-Binder与跨进程通信.md) 理解广播分发的 Binder IPC 细节
-- 结合 [02-3-Service组件.md](./02-3-Service组件.md) 对比 Service 和 BroadcastReceiver 的生命周期差异
+- 结合 [AMS与WMS核心服务](../framework/AMS与WMS核心服务.md) 理解 AMS 如何统一管理四大组件
+- 结合 [Binder与跨进程通信](../framework/Binder与跨进程通信.md) 理解广播分发的 Binder IPC 细节
+- 结合 [Service组件](./Service组件.md) 对比 Service 和 BroadcastReceiver 的生命周期差异
 - 阅读 `BroadcastQueueModernImpl.java`（Android 14+ 的新广播队列实现）了解最新架构变化
 - 阅读 Android 官方文档中隐式广播例外白名单的完整列表
 

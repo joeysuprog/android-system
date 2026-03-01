@@ -1,6 +1,6 @@
 # Kotlin 协程与 Flow 深度解析
 
-> 面向具有 5.5 年 Android 应用开发经验的开发者，从原理到实战系统讲解 Kotlin 协程的挂起/恢复机制与状态机变换、Flow 冷热流设计、StateFlow/SharedFlow 的使用场景，以及如何结合 MVI 架构模式构建单向数据流的现代 Android 应用
+> 从原理到实战系统讲解 Kotlin 协程的挂起/恢复机制与状态机变换、Flow 冷热流设计、StateFlow/SharedFlow 的使用场景，以及如何结合 MVI 架构模式构建单向数据流的现代 Android 应用
 
 ---
 
@@ -920,8 +920,6 @@ graph LR
 3. **时间旅行调试**：记录所有 State 变化序列，可以回放任意时刻的 UI 状态
 4. **与 Compose 天然契合**：Compose 的 `State` → UI 重组模型与 MVI 的 State → Render 完全一致
 
-
-
 ### 8.6 MVI + Coroutine + Flow 架构
 
 ```mermaid
@@ -954,6 +952,8 @@ graph TB
     StateHolder -->|"collect"| UI
     EffectChannel -->|"collect"| UI
 ```
+
+
 
 ---
 
@@ -1206,7 +1206,6 @@ fun onSearchQueryChanged(query: String) {
 
 ## 12. 关联文档
 
-- [02-2-Activity与Fragment](./02-2-Activity与Fragment.md) — Lifecycle、ViewModel 架构组件的设计原理
-- [02-3-Service组件](./02-3-Service组件.md) — Service 中使用协程的场景与生命周期绑定
-- [14-知识总结与面试题](./14-知识总结与面试题.md) — Android 知识体系总结与面试准备
+- [Activity与Fragment](./Activity与Fragment.md) — Lifecycle、ViewModel 架构组件的设计原理
+- [Service组件](./Service组件.md) — Service 中使用协程的场景与生命周期绑定
 

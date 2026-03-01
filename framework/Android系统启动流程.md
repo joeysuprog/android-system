@@ -490,9 +490,9 @@ adb pull /data/misc/perfetto-traces/boot_trace.pb
 
 **相关文档**：
 
-- [01-Android系统架构全景](./01-Android系统架构全景.md) — 系统分层架构、SystemServer 服务概览
-- [02-Binder与跨进程通信](./02-Binder与跨进程通信.md) — 启动链路中大量使用的 IPC 机制
-- [02-1-AMS与WMS核心服务](./02-1-AMS与WMS核心服务.md) — SystemServer 中启动的核心服务详解
-- [09-Launcher3架构](./09-Launcher3架构.md) — 启动链路的最后一环
-- [12-启动与内存分析实战](./12-启动与内存分析实战.md) — App 冷启动性能分析
+- [Android系统架构全景](./Android系统架构全景.md) — 系统分层架构、SystemServer 服务概览
+- [Binder与跨进程通信](./Binder与跨进程通信.md) — 启动链路中大量使用的 IPC 机制
+- [AMS与WMS核心服务](./AMS与WMS核心服务.md) — SystemServer 中启动的核心服务详解
+- [Launcher3架构](../system-ui-app/Launcher3架构.md) — 启动链路的最后一环
+- [启动分析流程](../perfetto/启动分析流程.md) — App 冷启动性能分析
 

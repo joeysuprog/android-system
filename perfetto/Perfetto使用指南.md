@@ -405,6 +405,6 @@ WHERE name LIKE '%doFrame%' AND dur > 0;
 
 **相关文档**：  
 
-- [07-渲染全链路](./07-渲染全链路.md)  
-- [06-VSync 与帧调度](./06-VSync与帧调度.md)
+- [渲染全链路](../framework/渲染全链路.md)  
+- [VSync与帧调度](../framework/VSync与帧调度.md)
 

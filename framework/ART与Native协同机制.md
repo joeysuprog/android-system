@@ -347,8 +347,8 @@ Java 层的 `Thread` 类调用 native 方法，ART 虚拟机通过 JNI 进入底
 
 ## 11. 关联文档
 
-- [01-1-Android系统启动流程](./01-1-Android系统启动流程.md) —— Zygote 孵化机制的源头
-- [02-Binder与跨进程通信](./02-Binder与跨进程通信.md) —— Binder 机制中大量的跨层协同（Java Proxy -> JNI -> Binder 驱动）
-- [16-JNI桥接机制](./16-JNI桥接机制.md) —— 本章的基础，深入了解 JNI 的具体实现和类型映射
-- [10-Perfetto使用指南](./10-Perfetto使用指南.md) —— 使用 Perfetto 在统一的时间轴上观察 Java 线程与 Native 执行的轨迹
-- [04-HWUI渲染管线](./04-HWUI渲染管线.md) —— 典型的跨层架构：Java 构建 DisplayList，RenderThread (Native) 执行 GPU 绘制
+- [Android系统启动流程](../framework/Android系统启动流程.md) —— Zygote 孵化机制的源头
+- [Binder与跨进程通信](../framework/Binder与跨进程通信.md) —— Binder 机制中大量的跨层协同（Java Proxy -> JNI -> Binder 驱动）
+- [JNI桥接机制](../framework/JNI桥接机制.md) —— 本章的基础，深入了解 JNI 的具体实现和类型映射
+- [Perfetto使用指南](../perfetto/Perfetto使用指南.md) —— 使用 Perfetto 在统一的时间轴上观察 Java 线程与 Native 执行的轨迹
+- [HWUI渲染管线](../framework/HWUI渲染管线.md) —— 典型的跨层架构：Java 构建 DisplayList，RenderThread (Native) 执行 GPU 绘制

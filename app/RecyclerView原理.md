@@ -4,10 +4,10 @@
 >
 > 建议先了解 Android 渲染机制。
 >
-> 1. [《03-View绘制体系》](./03-View绘制体系.md)
-> 2. [《04-HWUI渲染管线》](./04-HWUI渲染管线.md)
-> 3. [《06-VSync与帧调度》](./06-VSync与帧调度.md)
-> 4. [《05-SurfaceFlinger合成》](./05-SurfaceFlinger合成.md)
+> 1. [《View绘制体系》](../framework/View绘制体系.md)
+> 2. [《HWUI渲染管线》](../framework/HWUI渲染管线.md)
+> 3. [《VSync与帧调度》](../framework/VSync与帧调度.md)
+> 4. [《SurfaceFlinger合成》](../framework/SurfaceFlinger合成.md)
 
 ---
 

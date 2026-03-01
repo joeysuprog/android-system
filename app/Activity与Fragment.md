@@ -784,9 +784,9 @@ AndroidX Fragment 引入了 View 独立的 Lifecycle（通过 `getViewLifecycleO
 
 ## 关联文档
 
-- [01-2-App启动流程](01-2-App启动流程.md) — Activity 创建的跨进程完整链路
-- [02-1-AMS与WMS核心服务](02-1-AMS与WMS核心服务.md) — 系统服务视角的 AMS/ATMS 和 WMS
-- [03-View绘制体系](03-View绘制体系.md) — Activity 首帧上屏后的 View 测量/布局/绘制
-- [01-1-Android系统启动流程](01-1-Android系统启动流程.md) — 从开机到 Launcher 的系统启动全链路
-- [10-1-AndroidStudioProfiler性能优化](10-1-AndroidStudioProfiler性能优化.md) — Activity/Fragment 内存泄漏检测
+- [App启动流程](../framework/App启动流程.md) — Activity 创建的跨进程完整链路
+- [AMS与WMS核心服务](../framework/AMS与WMS核心服务.md) — 系统服务视角的 AMS/ATMS 和 WMS
+- [View绘制体系](../framework/View绘制体系.md) — Activity 首帧上屏后的 View 测量/布局/绘制
+- [Android系统启动流程](../framework/Android系统启动流程.md) — 从开机到 Launcher 的系统启动全链路
+- [AndroidStudioProfiler性能优化](../perfetto/AndroidStudioProfiler性能优化.md) — Activity/Fragment 内存泄漏检测
 
