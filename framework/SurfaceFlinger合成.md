@@ -4,6 +4,20 @@
 
 ---
 
+## 目录
+
+1. [SurfaceFlinger 概述](#1-surfaceflinger-概述)
+2. [BufferQueue 生产者-消费者模型](#2-bufferqueue-生产者-消费者模型)
+3. [Layer 体系](#3-layer-体系)
+4. [合成流程](#4-合成流程)
+5. [HWC vs GPU 合成](#5-hwc-vs-gpu-合成)
+6. [SurfaceControl 与 Transaction](#6-surfacecontrol-与-transaction)
+7. [AI 交互建议](#7-ai-交互建议)
+8. [真机实操](#8-真机实操)
+9. [小结](#小结)
+
+---
+
 ## 1. SurfaceFlinger 概述
 
 ### 1.1 什么是 SurfaceFlinger

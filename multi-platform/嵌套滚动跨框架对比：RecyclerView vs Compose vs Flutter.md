@@ -15,8 +15,9 @@
 2. [Android 原生 (RecyclerView)：接口协议流](#2-android-原生-recyclerview接口协议流)
 3. [Jetpack Compose：Modifier 修饰符与协程流](#3-jetpack-composemodifier-修饰符与协程流)
 4. [Flutter：Sliver 物理共享与视口碎片](#4-fluttersliver-物理共享与视口碎片)
-5. [跨框架横向对比（核心总结）](#5-跨框架横向对比核心总结)
-6. [面试高频考点](#6-面试高频考点)
+5. [经典实战场景：吸顶效果 (Sticky Header) 跨框架实现对比](#5-经典实战场景吸顶效果-sticky-header-跨框架实现对比)
+6. [跨框架横向对比（核心总结）](#6-跨框架横向对比核心总结)
+7. [面试高频考点](#7-面试高频考点)
 
 ---
 

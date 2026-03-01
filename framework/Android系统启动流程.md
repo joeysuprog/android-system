@@ -4,6 +4,20 @@
 
 ---
 
+## 目录
+
+1. [启动全景图](#1-启动全景图)
+2. [Bootloader 与 Linux Kernel 启动](#2-bootloader-与-linux-kernel-启动)
+3. [init 进程（PID 1）](#3-init-进程pid-1)
+4. [Zygote 进程](#4-zygote-进程)
+5. [SystemServer 启动](#5-systemserver-启动)
+6. [App 进程创建（Zygote fork）](#6-app-进程创建zygote-fork)
+7. [Launcher 启动 — 开机完成](#7-launcher-启动-开机完成)
+8. [真机实操验证](#8-真机实操验证)
+9. [面试高频问题](#9-面试高频问题)
+
+---
+
 ## 1. 启动全景图
 
 ```mermaid

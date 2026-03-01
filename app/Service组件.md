@@ -4,6 +4,25 @@
 
 ---
 
+## 目录
+
+1. [Service 是什么、为什么需要它](#1-service-是什么为什么需要它)
+2. [Service 分类与基本概念](#2-service-分类与基本概念)
+3. [Service 生命周期全景图](#3-service-生命周期全景图)
+4. [startService 启动完整链路（系统侧）](#4-startservice-启动完整链路系统侧)
+5. [bindService 绑定完整链路](#5-bindservice-绑定完整链路)
+6. [前台服务（Foreground Service）](#6-前台服务foreground-service)
+7. [Service 与进程优先级](#7-service-与进程优先级)
+8. [IntentService（已废弃）与替代方案](#8-intentservice已废弃与替代方案)
+9. [跨进程绑定：Messenger 与 AIDL](#9-跨进程绑定messenger-与-aidl)
+10. [常用调试命令与 Perfetto 实操](#10-常用调试命令与-perfetto-实操)
+11. [面试高频问题](#11-面试高频问题)
+12. [AI 交互建议](#ai-交互建议)
+13. [真机实操](#真机实操)
+14. [下一步学习建议](#下一步学习建议)
+
+---
+
 ## 1. Service 是什么、为什么需要它
 
 ### 1.1 一句话定义

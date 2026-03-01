@@ -9,11 +9,11 @@
 ## 目录
 
 1. [概述与背景](#1-概述与背景)
-2. [动画的底层驱动 —— Choreographer 与 Vsync](#2-动画的底层驱动--choreographer-与-vsync)
+2. [动画的底层驱动 —— Choreographer 与 Vsync](#2-动画的底层驱动-choreographer-与-vsync)
 3. [View 动画（Animation）](#3-view-动画animation)
 4. [属性动画（Property Animation）](#4-属性动画property-animation)
-5. [TimeInterpolator —— 时间插值器](#5-timeinterpolator--时间插值器)
-6. [Transition 框架 —— 转场动画](#6-transition-框架--转场动画)
+5. [TimeInterpolator —— 时间插值器](#5-timeinterpolator-时间插值器)
+6. [Transition 框架 —— 转场动画](#6-transition-框架-转场动画)
 7. [物理动画（Physics-based Animation）](#7-物理动画physics-based-animation)
 8. [Compose 动画系统](#8-compose-动画系统)
 9. [动画性能优化](#9-动画性能优化)

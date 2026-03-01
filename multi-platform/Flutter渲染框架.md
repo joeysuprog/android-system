@@ -11,6 +11,23 @@
 
 ---
 
+## 目录
+
+1. [Flutter 的架构定位 — 与 Android 原生/Compose 的根本差异](#1-flutter-的架构定位-与-android-原生compose-的根本差异)
+2. [Widget / Element / RenderObject 三棵树](#2-widget-element-renderobject-三棵树)
+3. [布局系统 — Constraints 向下，Size 向上](#3-布局系统-constraints-向下size-向上)
+4. [绘制系统与 Layer 树](#4-绘制系统与-layer-树)
+5. [Flutter Engine — Skia、Impeller 与线程模型](#5-flutter-engine-skiaimpeller-与线程模型)
+6. [帧调度机制 — 接入 Choreographer](#6-帧调度机制-接入-choreographer)
+7. [平台桥接与合成出口 — 接入 SurfaceFlinger](#7-平台桥接与合成出口-接入-surfaceflinger)
+8. [Platform Channel — 与系统服务通信](#8-platform-channel-与系统服务通信)
+9. [性能分析与排查工具](#9-性能分析与排查工具)
+10. [面试高频问题](#10-面试高频问题)
+11. [AI 交互建议](#ai-交互建议)
+12. [下一步学习建议](#下一步学习建议)
+
+---
+
 ## 1. Flutter 的架构定位 — 与 Android 原生/Compose 的根本差异
 
 ### 1.1 三种渲染路径对比

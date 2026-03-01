@@ -1,5 +1,22 @@
 # ANR 分析
 
+## 目录
+
+1. [场景描述](#场景描述)
+2. [第一步：ANR 机制回顾](#第一步anr-机制回顾)
+3. [第二步：收集 ANR 信息](#第二步收集-anr-信息)
+4. [第三步：traces.txt 解读](#第三步tracestxt-解读)
+5. [第四步：Perfetto 中定位 ANR](#第四步perfetto-中定位-anr)
+6. [第五步：优化方向](#第五步优化方向)
+7. [一、ANR 相关](#一anr-相关)
+8. [二、内存与 LMK](#二内存与-lmk)
+9. [三、SurfaceFlinger 与刷新率](#三surfaceflinger-与刷新率)
+10. [四、Perfetto 通用采集](#四perfetto-通用采集)
+11. [五、启动与帧率](#五启动与帧率)
+12. [六、常用 SQL（Perfetto Query）](#六常用-sqlperfetto-query)
+
+---
+
 ## 场景描述
 
 > **线上反馈**：后台播放音乐时，前台 App 偶发 ANR。traces.txt 显示主线程阻塞在 `Binder.transact()`，对端为 `system_server` 的 `AudioService`。

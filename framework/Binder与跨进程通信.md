@@ -4,6 +4,24 @@
 
 ---
 
+## 目录
+
+1. [一、为什么选择 Binder？](#一为什么选择-binder)
+2. [二、Binder 架构概览](#二binder-架构概览)
+3. [三、Binder 事务流程](#三binder-事务流程)
+4. [四、Java 层：Binder、IBinder、AIDL](#四java-层binderibinderaidl)
+5. [五、Native 层：IPCThreadState 与 ProcessState](#五native-层ipcthreadstate-与-processstate)
+6. [六、ServiceManager：服务的“DNS”](#六servicemanager服务的dns)
+7. [七、AIDL 工作原理（从 App 到内核）](#七aidl-工作原理从-app-到内核)
+8. [八、Binder 线程池与限制](#八binder-线程池与限制)
+9. [九、Mermaid：Binder 事务流程（详细）](#九mermaidbinder-事务流程详细)
+10. [十、AI 交互建议](#十ai-交互建议)
+11. [十一、真机实操](#十一真机实操)
+12. [十二、源码阅读建议](#十二源码阅读建议)
+13. [十三、下一步学习建议](#十三下一步学习建议)
+
+---
+
 ## 一、为什么选择 Binder？
 
 Android 需要一种高效的跨进程通信（IPC）机制，用于 App 与系统服务（如 AMS、PMS）的交互。相比其他方案，Binder 有其独特优势。

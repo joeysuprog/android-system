@@ -4,6 +4,20 @@
 
 ---
 
+## 目录
+
+1. [App 启动全景图](#1-app-启动全景图)
+2. [Launcher 发起启动请求](#2-launcher-发起启动请求)
+3. [system_server 处理启动请求](#3-systemserver-处理启动请求)
+4. [Zygote fork 新进程（冷启动）](#4-zygote-fork-新进程冷启动)
+5. [ActivityThread — App 进程初始化](#5-activitythread-app-进程初始化)
+6. [Activity 生命周期启动](#6-activity-生命周期启动)
+7. [Window 创建与首帧渲染](#7-window-创建与首帧渲染)
+8. [启动耗时指标与调试](#8-启动耗时指标与调试)
+9. [面试高频问题](#9-面试高频问题)
+
+---
+
 ## 1. App 启动全景图
 
 ### 1.1 完整启动序列

@@ -4,6 +4,26 @@
 
 ---
 
+## 目录
+
+1. [ContentProvider 是什么、为什么需要它](#1-contentprovider-是什么为什么需要它)
+2. [核心概念与基本结构](#2-核心概念与基本结构)
+3. [ContentProvider 生命周期](#3-contentprovider-生命周期)
+4. [ContentProvider 启动与发布完整链路（系统侧）](#4-contentprovider-启动与发布完整链路系统侧)
+5. [ContentResolver 与 Binder 通信机制](#5-contentresolver-与-binder-通信机制)
+6. [数据观察机制：ContentObserver](#6-数据观察机制contentobserver)
+7. [权限与安全](#7-权限与安全)
+8. [FileProvider：安全的文件共享](#8-fileprovider安全的文件共享)
+9. [系统内置 ContentProvider 一览](#9-系统内置-contentprovider-一览)
+10. [Android 版本演进与限制](#10-android-版本演进与限制)
+11. [常用调试命令与 Perfetto 实操](#11-常用调试命令与-perfetto-实操)
+12. [面试高频问题](#12-面试高频问题)
+13. [AI 交互建议](#ai-交互建议)
+14. [真机实操](#真机实操)
+15. [下一步学习建议](#下一步学习建议)
+
+---
+
 ## 1. ContentProvider 是什么、为什么需要它
 
 ### 1.1 一句话定义

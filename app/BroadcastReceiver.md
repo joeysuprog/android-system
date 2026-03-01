@@ -4,6 +4,26 @@
 
 ---
 
+## 目录
+
+1. [BroadcastReceiver 是什么、为什么需要它](#1-broadcastreceiver-是什么为什么需要它)
+2. [广播分类](#2-广播分类)
+3. [注册方式：静态 vs 动态](#3-注册方式静态-vs-动态)
+4. [sendBroadcast 完整链路（系统侧）](#4-sendbroadcast-完整链路系统侧)
+5. [Ordered Broadcast 机制](#5-ordered-broadcast-机制)
+6. [BroadcastReceiver 生命周期与约束](#6-broadcastreceiver-生命周期与约束)
+7. [权限与安全](#7-权限与安全)
+8. [Android 版本演进与限制](#8-android-版本演进与限制)
+9. [常用系统广播一览](#9-常用系统广播一览)
+10. [LocalBroadcastManager（已废弃）与替代方案](#10-localbroadcastmanager已废弃与替代方案)
+11. [常用调试命令与 Perfetto 实操](#11-常用调试命令与-perfetto-实操)
+12. [面试高频问题](#12-面试高频问题)
+13. [AI 交互建议](#ai-交互建议)
+14. [真机实操](#真机实操)
+15. [下一步学习建议](#下一步学习建议)
+
+---
+
 ## 1. BroadcastReceiver 是什么、为什么需要它
 
 ### 1.1 一句话定义

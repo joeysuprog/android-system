@@ -4,6 +4,24 @@
 
 ---
 
+## 目录
+
+1. [为什么需要 Compose — 从 View 体系的痛点出发](#1-为什么需要-compose-从-view-体系的痛点出发)
+2. [Compose 架构分层全景图](#2-compose-架构分层全景图)
+3. [Compose Runtime — 智能重组引擎](#3-compose-runtime-智能重组引擎)
+4. [Compose UI — 测量/布局/绘制](#4-compose-ui-测量布局绘制)
+5. [平台桥接 — AndroidComposeView 如何接入 AOSP](#5-平台桥接-androidcomposeview-如何接入-aosp)
+6. [Compose 动画系统与帧调度](#6-compose-动画系统与帧调度)
+7. [Compose 与传统 View 的互操作](#7-compose-与传统-view-的互操作)
+8. [AOSP SystemUI 中的 Compose 实践](#8-aosp-systemui-中的-compose-实践)
+9. [Compose 性能优化与 Perfetto 分析](#9-compose-性能优化与-perfetto-分析)
+10. [面试高频问题](#10-面试高频问题)
+11. [AI 交互建议](#ai-交互建议)
+12. [真机实操](#真机实操)
+13. [下一步学习建议](#下一步学习建议)
+
+---
+
 ## 1. 为什么需要 Compose — 从 View 体系的痛点出发
 
 ### 1.1 View 体系的核心问题

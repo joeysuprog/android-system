@@ -4,6 +4,19 @@
 
 ---
 
+## 目录
+
+1. [View 绘制入口：ViewRootImpl](#1-view-绘制入口viewrootimpl)
+2. [Choreographer：VSync 驱动的帧调度](#2-choreographervsync-驱动的帧调度)
+3. [View.draw() 完整流程](#3-viewdraw-完整流程)
+4. [DecorView → ViewRootImpl → Surface 的关系](#4-decorview-viewrootimpl-surface-的关系)
+5. [MeasureSpec 机制](#5-measurespec-机制)
+6. [AI 交互建议](#ai-交互建议)
+7. [真机实操](#真机实操)
+8. [小结](#小结)
+
+---
+
 ## 1. View 绘制入口：ViewRootImpl
 
 ### 1.1 源码位置

@@ -4,6 +4,23 @@
 
 ---
 
+## 目录
+
+1. [Activity 生命周期全景图](#1-activity-生命周期全景图)
+2. [Activity 生命周期的驱动机制（ClientTransaction）](#2-activity-生命周期的驱动机制clienttransaction)
+3. [Activity 启动模式与 Task 管理](#3-activity-启动模式与-task-管理)
+4. [Activity 状态保存与恢复](#4-activity-状态保存与恢复)
+5. [Fragment 生命周期](#5-fragment-生命周期)
+6. [FragmentManager 与事务机制](#6-fragmentmanager-与事务机制)
+7. [Lifecycle 组件（AndroidX）](#7-lifecycle-组件androidx)
+8. [ViewModel 架构（AndroidX）](#8-viewmodel-架构androidx)
+9. [android.app.Fragment vs AndroidX Fragment](#9-androidappfragment-vs-androidx-fragment)
+10. [常见问题与最佳实践](#10-常见问题与最佳实践)
+11. [面试高频问题](#11-面试高频问题)
+12. [关联文档](#关联文档)
+
+---
+
 ## 1. Activity 生命周期全景图
 
 ### 1.1 源码位置

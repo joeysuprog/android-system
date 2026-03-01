@@ -4,6 +4,18 @@
 
 ---
 
+## 目录
+
+1. [Perfetto 概述](#1-perfetto-概述)
+2. [抓取 Trace 的三种方法](#2-抓取-trace-的三种方法)
+3. [Perfetto UI 界面操作](#3-perfetto-ui-界面操作)
+4. [关键 Trace 切片（Slice）解读](#4-关键-trace-切片slice解读)
+5. [Perfetto SQL 常用查询](#5-perfetto-sql-常用查询)
+6. [性能分析方法论](#6-性能分析方法论)
+7. [AI 交互建议](#7-ai-交互建议)
+
+---
+
 ## 1. Perfetto 概述
 
 ### 1.1 什么是 Perfetto

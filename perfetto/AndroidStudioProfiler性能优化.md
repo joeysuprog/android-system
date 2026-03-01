@@ -4,6 +4,19 @@
 
 ---
 
+## 目录
+
+1. [Profiler 概述与 Perfetto 对比](#1-profiler-概述与-perfetto-对比)
+2. [CPU Profiler](#2-cpu-profiler)
+3. [Memory Profiler](#3-memory-profiler)
+4. [Network Profiler](#4-network-profiler)
+5. [Energy Profiler](#5-energy-profiler)
+6. [Layout Inspector](#6-layout-inspector)
+7. [Profiler + Perfetto 联合分析方法论](#7-profiler-perfetto-联合分析方法论)
+8. [性能优化 Checklist](#8-性能优化-checklist)
+
+---
+
 ## 1. Profiler 概述与 Perfetto 对比
 
 ### 1.1 定位差异

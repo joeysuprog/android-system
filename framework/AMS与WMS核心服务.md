@@ -4,6 +4,15 @@
 
 ---
 
+## 目录
+
+1. [Part 1：ActivityManagerService (AMS)](#part-1activitymanagerservice-ams)
+2. [Part 2：WindowManagerService (WMS)](#part-2windowmanagerservice-wms)
+3. [AI 交互建议](#ai-交互建议)
+4. [真机实操](#真机实操)
+
+---
+
 ## Part 1：ActivityManagerService (AMS)
 
 ### 1.1 角色与职责

@@ -4,6 +4,20 @@
 
 ---
 
+## 目录
+
+1. [VSync 基础概念](#1-vsync-基础概念)
+2. [VSync 信号生成与分发](#2-vsync-信号生成与分发)
+3. [Choreographer 深入（VSync 视角）](#3-choreographer-深入vsync-视角)
+4. [双缓冲与三重缓冲](#4-双缓冲与三重缓冲)
+5. [帧生命周期与 FrameTimeline](#5-帧生命周期与-frametimeline)
+6. [可变刷新率 (VRR)](#6-可变刷新率-vrr)
+7. [AI 交互建议](#7-ai-交互建议)
+8. [真机实操](#8-真机实操)
+9. [小结](#9-小结)
+
+---
+
 ## 1. VSync 基础概念
 
 ### 1.1 什么是 VSync (Vertical Synchronization)

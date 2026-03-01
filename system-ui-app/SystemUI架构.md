@@ -4,6 +4,20 @@
 
 ---
 
+## 目录
+
+1. [SystemUI 概述](#1-systemui-概述)
+2. [模块架构](#2-模块架构)
+3. [Dagger 依赖注入](#3-dagger-依赖注入)
+4. [SystemUI 与 WMS 的交互](#4-systemui-与-wms-的交互)
+5. [SystemUI 定制常见场景](#5-systemui-定制常见场景)
+6. [SystemUI 启动与初始化顺序](#6-systemui-启动与初始化顺序)
+7. [AI 交互建议](#7-ai-交互建议)
+8. [真机实操](#8-真机实操)
+9. [小结](#9-小结)
+
+---
+
 ## 1. SystemUI 概述
 
 ### 1.1 什么是 SystemUI
